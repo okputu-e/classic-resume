@@ -1,0 +1,511 @@
+/*classic resume*/
+
+/*General*/
+@font-face {
+  /*Primary font*/
+  font-family: "Playfair Display";
+  src: url("/public/font/playfairDisplay/PlayfairDisplay-ExtraBold.woff2")
+      format("woff2"),
+    url("/public/font/playfairDisplay/PlayfairDisplay-ExtraBold.woff")
+      format("woff"),
+    url("/public/font/playfairDisplay/PlayfairDisplay-ExtraBold.ttf")
+      format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+
+  /*secondary font*/
+  font-family: "PT Sans Narrow";
+  src: url("/public/font/PTSansNarrow/PTSans-Narrow.woff2") format("woff2"),
+    url("/public/font/PTSansNarrow/PTSans-Narrow.woff") format("woff"),
+    url("/public/font/PTSansNarrow/PTSans-Narrow.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*resets*/
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  font-family: var(--secondary-font);
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+/*variables*/
+:root {
+  /*font*/
+  --primary-font: "Playfair Display", serif;
+  --secondary-font: "PT Sans Narrow", sans-serif;
+
+  /*color*/
+  --primary-color: #0699a6;
+  --secondary-color: #9e8c6c;
+  --font-color-black: #000000;
+  --font-color-white: #ffffff;
+}
+
+/*headings*/
+h1,
+.secondname,
+h2,
+h4 {
+  font-family: var(--primary-font);
+  font-weight: 900;
+  text-transform: capitalize;
+  color: var(--font-color-black);
+}
+
+h1,
+.secondname {
+  font-size: 3.5rem;
+}
+
+.secondname {
+  margin-top: -1.3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: var(--secondary-font);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  line-height: 1.5rem;
+}
+
+h4 {
+  font-size: 3.5rem;
+}
+
+/*paragraph  and list*/
+p,
+li {
+  font-size: 1.125rem;
+}
+
+p,
+li,
+small {
+  font-family: var(--secondary-font);
+}
+
+ul {
+  list-style: none;
+}
+
+/*link*/
+
+a {
+  display: inline-block;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/*header*/
+header {
+  margin-bottom: 3.9375rem;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  overflow-x: hidden;
+}
+
+header::before {
+  content: "";
+  background-color: rgba(158, 140, 108, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: rotate(-180deg);
+}
+
+header::after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 100px solid rgba(158, 140, 108, 0.1);
+  border-right: 120rem solid transparent;
+}
+
+div.resume_image img.passport {
+  margin-top: 5rem;
+  position: relative;
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  margin-bottom: 2.5rem;
+}
+
+div.resume_image img.nice {
+  position: absolute;
+  z-index: 5;
+  top: 3.125rem;
+  margin-left: 6.2rem;
+}
+
+h1.resume_name br {
+  margin-top: -3em;
+}
+
+div.resume_heading a {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  color: var(--font-color-white);
+  width: 11.3125rem;
+  line-height: 1.5rem;
+  padding: 1.0625rem 1.375rem 1.1875rem;
+  margin-top: 2.5rem;
+  margin-bottom: 8.125rem;
+  font-weight: bold;
+}
+
+/*media query*/
+@media screen and (min-width: 37.5rem) {
+  h1,
+  .secondname {
+    font-size: 5.375rem;
+  }
+
+  p,
+  li {
+    font-size: 1.25rem;
+  }
+
+  .secondname {
+    margin-top: -2rem;
+  }
+
+  div.resume_image img.passport {
+    height: 12.5rem;
+    width: 12.5rem;
+  }
+
+  div.resume_image img.nice {
+    top: 3.125rem;
+    margin-left: 8.2rem;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+
+  header div.header_inner {
+    display: flex;
+    margin: 180px 0 209px;
+  }
+
+  h1,
+  .secondname {
+    font-size: 7.875rem;
+  }
+
+  .secondname {
+    margin-top: -3rem;
+  }
+
+  div.resume_image img.passport {
+    margin: 0;
+    height: 21.875rem;
+    width: 21.875rem;
+  }
+
+  div.resume_image img.nice {
+    width: 152px;
+    height: 152px;
+    top: 28rem;
+    margin-left: 15rem;
+  }
+
+  header div.resume_heading {
+    margin-left: 7.8125rem;
+  }
+
+  div.resume_heading a {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+/*section*/
+
+section.resume_info {
+  padding: 0 1.25rem;
+}
+
+section div.personal_info_container hr {
+  background: var(--primary-color);
+  width: 3.375rem;
+  height: 0.625rem;
+  border: none;
+  margin: 2.5rem 0;
+}
+
+div.about div.about_details p,
+div.experience div.experience_details div.jobs p {
+  line-height: 1.875rem;
+}
+
+/*Section One*/
+
+/*about*/
+div.about div.about_details h2 {
+  margin-bottom: 0.625rem;
+}
+div.about div.about_details p {
+  text-align: left;
+}
+
+/*experience*/
+div.experience div.experience_details h2 {
+  margin-bottom: 1.5rem;
+}
+div.experience div.experience_details div.jobs h3 {
+  margin-bottom: 0.5rem;
+}
+div.experience div.experience_details div.jobs p {
+  text-align: left;
+  margin: 1.25rem 0 2.5rem;
+}
+
+/*education*/
+div.education div.education_details h2 {
+  margin-bottom: 1.25rem;
+}
+
+div.education div.education_details h3 {
+  margin-bottom: 0.5rem;
+}
+
+div.education div.education_details small {
+  font-size: 1.125rem;
+}
+
+@media screen and (min-width: 37.5rem) {
+  section.resume_info {
+    padding: 0 9rem;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  section.resume_info {
+    display: grid;
+    grid-gap: 7rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "one two two";
+  }
+
+  section div.personal_info_container hr.about_hr {
+    margin: 5rem 0 4.125rem;
+  }
+
+  section div.personal_info_container hr.experience_hr {
+    margin: 4.125rem 0 4.375rem;
+  }
+
+  section.resume_info div.personal_info_container {
+    grid-area: two;
+  }
+  section.resume_info div.skills_info_container {
+    grid-area: one;
+  }
+
+  section div.personal_info_container hr.education_hr {
+    display: none;
+  }
+
+  div.experience div.experience_details div.jobs:not(:last-child) {
+    margin-bottom: 4.125rem;
+  }
+
+  div.experience div.experience_details div.jobs h3 {
+    margin-bottom: 0;
+  }
+
+  div.experience div.experience_details div.jobs div.jobs_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  div.education div.education_details div.education_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  div.education div.education_details div.education_info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0;
+  }
+
+  div.education div.education_details div.education_info small {
+    font-size: 1.125rem;
+  }
+}
+
+/*Section Two*/
+div.skills_info_container div.skillsets h3,
+div.skills_info_container div.awards h3,
+div.skills_info_container div.career h3,
+div.skills_info_container div.recent_work h3 {
+  margin-bottom: 0.625rem;
+}
+
+div.skills_info_container div.skillsets ul,
+div.skills_info_container div.awards ul,
+div.skills_info_container div.career ul,
+div.skills_info_container div.recent_work ul {
+  margin-bottom: 3.75rem;
+}
+
+div.skills_info_container div.skillsets ul li,
+div.skills_info_container div.awards ul li,
+div.skills_info_container div.career ul li,
+div.skills_info_container div.recent_work ul li {
+  line-height: 1.875rem;
+}
+
+div.skills_info_container div.career ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+div.skills_info_container div.recent_work ul li {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 75rem) {
+  div.skills_info_container div.awards,
+  div.skills_info_container div.career,
+  div.skills_info_container div.recent_work {
+    margin-top: 6.25rem;
+  }
+}
+
+/*footer*/
+footer {
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+}
+footer::before {
+  content: "";
+  background-color: rgba(158, 140, 108, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: rotate(-180deg);
+}
+
+footer::after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-bottom: 100px solid rgba(158, 140, 108, 0.1);
+  border-left: 120rem solid transparent;
+}
+
+footer div.footer_inner h4 {
+  font-size: 2.5rem;
+  margin: 10rem auto 2rem;
+  line-height: 3.125rem;
+}
+
+footer div.footer_inner ul.contact_info li.contact_info_item a {
+  font-family: var(--primary-font);
+  font-weight: 900;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+footer div.footer_inner ul.contact_info li.vr span {
+  display: none;
+}
+
+footer div.footer_inner ul.social_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.855rem 0 5.76125rem;
+}
+
+footer div.footer_inner ul.social_links li {
+  margin: 0 1.5rem;
+}
+
+@media screen and (min-width: 37.5rem) {
+  footer div.footer_inner ul.contact_info li.contact_info_item a {
+    font-size: 1.875rem;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  footer div.footer_inner h4 {
+    font-size: 4.125rem;
+  }
+
+  footer div.footer_inner ul.contact_info {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer div.footer_inner ul.contact_info li.contact_info_item a {
+    font-size: 2.25rem;
+  }
+
+  footer div.footer_inner ul.contact_info li.vr span {
+    display: block;
+    color: var(--primary-color);
+    margin: 0 0.625rem;
+    font-size: 2.25rem;
+  }
+}
