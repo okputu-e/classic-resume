@@ -16,19 +16,9 @@
   <p>
       it was a challenge from 
       <a href="https://softwarementor.io">
-          Website
+          Software Mentor
       </a>
     </p>
-</div>
-
-<br />
-
-<div align="center">
-  <h3>
-    <a href="https://softwarementor.io">
-      Website
-    </a>
-  </h3>
 </div>
 
 <div align="center">
